@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 4.2</title>
+  </head>
+  <body>
+    <script>
+      let threeNumbers = prompt("Введіть трьохзначне число");
+      threeNumbers;
+      threeNumbers = `${threeNumbers}`;
+      if (
+        threeNumbers[0] == threeNumbers[1] &&
+        threeNumbers[0] == threeNumbers[2]
+      ) {
+        console.log(
+          `всі три числа однакові ${threeNumbers[0]} ${threeNumbers[0]} ${threeNumbers[0]}`
+        );
+      } else if (threeNumbers[0] == threeNumbers[1]) {
+        console.log(
+          `Перше число дорівнює другому тобто числа ${threeNumbers[0]} і ${threeNumbers[1]} однакові`
+        );
+      } else if (threeNumbers[0] == threeNumbers[2]) {
+        console.log(
+          `Перше число дорівнює третьому тобто числа ${threeNumbers[0]} і ${threeNumbers[2]} однакові`
+        );
+      } else if (threeNumbers[1] == threeNumbers[2]) {
+        console.log(
+          `Друге число дорівнює третьому тобто числа ${threeNumbers[1]} і ${threeNumbers[2]} однакові`
+        );
+      } else {
+        console.log("всі числа різні");
+      }
+    </script>
+  </body>
+</html>

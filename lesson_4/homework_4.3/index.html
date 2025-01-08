@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 4.3</title>
+  </head>
+  <body>
+    <script>
+      let birdthday = prompt("Введіть свій рік народження");
+      let nitBirdthday = "Шкода, що Ви не захотіли ввести свою дату нарження";
+      if (birdthday) {
+        alert("Дякую");
+      } else {
+        alert(nitBirdthday);
+      }
+      let town = prompt("Введіть місто в якому ви живете");
+      let nitTown = "Шкода, що Ви не захотіли ввести своє місто";
+      if (!town) {
+        alert(nitTown);
+      } else if (town.toLowerCase() === "київ") {
+        alert("Ти живеш у столиці України");
+      } else if (town.toLowerCase() === "вашингтон") {
+        alert("Ти живеш у столиці Сполучених Штатів Америки");
+      } else if (town.toLowerCase() === "лондон") {
+        alert("Ти живеш у столиці Англії");
+      }
+      let sport = prompt("Введіть улюблений вид спорту");
+      let nitsport =
+        "Шкода, що Ви не захотіли ввести свій улюблений вид спорту";
+      if (!sport) {
+        alert(nitsport);
+      } else if (sport.toLowerCase() === "легка атлетика") {
+        alert("Круто! Хочеш стати Олександрою Магучіх?");
+      } else if (sport.toLowerCase() === "боротьба") {
+        alert("Круто! Хочеш стати Жаном Беленюком?");
+      } else if (sport.toLowerCase() === "бокс") {
+        alert("Круто! Хочеш стати Олександром Усиком?");
+      }
+    </script>
+  </body>
+</html>
