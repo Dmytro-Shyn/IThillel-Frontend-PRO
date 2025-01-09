@@ -8,14 +8,18 @@
   <body>
     <script>
       let birdthday = prompt("Введіть свій рік народження");
+      let town = prompt("Введіть місто в якому ви живете");
+      let sport = prompt("Введіть улюблений вид спорту");
       let nitBirdthday = "Шкода, що Ви не захотіли ввести свою дату нарження";
+      let nitTown = "Шкода, що Ви не захотіли ввести своє місто";
+      let nitsport =
+        "Шкода, що Ви не захотіли ввести свій улюблений вид спорту";
+
       if (birdthday) {
         alert("Дякую");
       } else {
         alert(nitBirdthday);
       }
-      let town = prompt("Введіть місто в якому ви живете");
-      let nitTown = "Шкода, що Ви не захотіли ввести своє місто";
       if (!town) {
         alert(nitTown);
       } else if (town.toLowerCase() === "київ") {
@@ -25,9 +29,6 @@
       } else if (town.toLowerCase() === "лондон") {
         alert("Ти живеш у столиці Англії");
       }
-      let sport = prompt("Введіть улюблений вид спорту");
-      let nitsport =
-        "Шкода, що Ви не захотіли ввести свій улюблений вид спорту";
       if (!sport) {
         alert(nitsport);
       } else if (sport.toLowerCase() === "легка атлетика") {

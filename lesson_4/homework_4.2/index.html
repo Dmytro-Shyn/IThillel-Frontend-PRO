@@ -10,6 +10,10 @@
       let threeNumbers = prompt("Введіть трьохзначне число");
       if (threeNumbers === null) {
         console.log(`Жаль що ви скасували (`);
+      } else if (threeNumbers.length !== 3) {
+        console.log(`Ви ввели некоректну кількість символів`);
+      } else if (isNaN(threeNumbers)) {
+        console.log(`Введіть три цифри`);
       } else if (
         threeNumbers[0] == threeNumbers[1] &&
         threeNumbers[0] == threeNumbers[2]
@@ -17,16 +21,6 @@
         console.log(
           `всі три числа однакові ${threeNumbers[0]} ${threeNumbers[0]} ${threeNumbers[0]}`
         );
-      } else if (threeNumbers.length !== 3) {
-        console.log(`Ви ввели некоректну кількість символів`);
-      } else if (isNaN(threeNumbers)) {
-        console.log(`Введіть три цифри`);
-      } else if (
-        threeNumbers[0] == 0 ||
-        threeNumbers[1] == 0 ||
-        threeNumbers[2] == 0
-      ) {
-        console.log(`Одне із значень дорівнює нулю умова не вірна`);
       } else if (threeNumbers[0] == threeNumbers[1]) {
         console.log(
           `Перше число дорівнює другому тобто числа ${threeNumbers[0]} і ${threeNumbers[1]} однакові`
