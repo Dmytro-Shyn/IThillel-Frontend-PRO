@@ -7,36 +7,61 @@
   </head>
   <body>
     <script>
-      let birdthday = prompt("Введіть свій рік народження");
-      let town = prompt("Введіть місто в якому ви живете");
+      let birthday = prompt("Введіть свій рік народження");
+      birthday = birthday ? birthday.trim() : "";
+      let currentYear = new Date().getFullYear();
+      let town = prompt("Введіть місто, в якому ви живете");
       let sport = prompt("Введіть улюблений вид спорту");
-      let nitBirdthday = "Шкода, що Ви не захотіли ввести свою дату нарження";
-      let nitTown = "Шкода, що Ви не захотіли ввести своє місто";
-      let nitsport =
-        "Шкода, що Ви не захотіли ввести свій улюблений вид спорту";
 
-      if (birdthday) {
-        alert("Дякую");
+      let nitBirthday = "Шкода, що Ви не захотіли ввести свій рік народження.";
+      let nitTown = "Шкода, що Ви не захотіли ввести своє місто.";
+      let nitSport =
+        "Шкода, що Ви не захотіли ввести свій улюблений вид спорту.";
+
+      if (!birthday || isNaN(birthday) || birthday > currentYear) {
+        alert(
+          "Введено некоректний рік народження. Будь ласка, введіть правильний рік."
+        );
       } else {
-        alert(nitBirdthday);
+        alert(`Дякую! Ваш рік народження: ${birthday}`);
       }
+
       if (!town) {
         alert(nitTown);
-      } else if (town.toLowerCase() === "київ") {
-        alert("Ти живеш у столиці України");
-      } else if (town.toLowerCase() === "вашингтон") {
-        alert("Ти живеш у столиці Сполучених Штатів Америки");
-      } else if (town.toLowerCase() === "лондон") {
-        alert("Ти живеш у столиці Англії");
+      } else {
+        switch (town.toLowerCase()) {
+          case "київ":
+            alert("Ти живеш у столиці України.");
+            break;
+          case "вашингтон":
+            alert("Ти живеш у столиці Сполучених Штатів Америки.");
+            break;
+          case "лондон":
+            alert("Ти живеш у столиці Англії.");
+            break;
+          default:
+            alert(`Ти живеш у місті ${town}.`);
+            break;
+        }
       }
+
       if (!sport) {
-        alert(nitsport);
-      } else if (sport.toLowerCase() === "легка атлетика") {
-        alert("Круто! Хочеш стати Олександрою Магучіх?");
-      } else if (sport.toLowerCase() === "боротьба") {
-        alert("Круто! Хочеш стати Жаном Беленюком?");
-      } else if (sport.toLowerCase() === "бокс") {
-        alert("Круто! Хочеш стати Олександром Усиком?");
+        alert(nitSport);
+      } else {
+        switch (sport.toLowerCase()) {
+          case "легка атлетика":
+            alert("Круто! Хочеш стати Олександрою Магучіх?");
+            break;
+          case "боротьба":
+            alert("Круто! Хочеш стати Жаном Беленюком?");
+            break;
+          case "бокс":
+            alert("Круто! Хочеш стати Олександром Усиком?");
+            break;
+          default:
+            alert(`Цікавий вибір: ${sport}.`);
+            break;
+        }
       }
     </script>
   </body>
