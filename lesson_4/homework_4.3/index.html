@@ -7,62 +7,71 @@
   </head>
   <body>
     <script>
+      let currentYear = new Date().getFullYear();
       let birthday = prompt("Введіть свій рік народження");
       birthday = birthday ? birthday.trim() : "";
-      let currentYear = new Date().getFullYear();
-      let town = prompt("Введіть місто, в якому ви живете");
-      let sport = prompt("Введіть улюблений вид спорту");
+
+      let town = prompt("Введіть місто, в якому ви живете").trim();
+      let sport = prompt("Введіть улюблений вид спорту").trim();
 
       let nitBirthday = "Шкода, що Ви не захотіли ввести свій рік народження.";
       let nitTown = "Шкода, що Ви не захотіли ввести своє місто.";
       let nitSport =
         "Шкода, що Ви не захотіли ввести свій улюблений вид спорту.";
 
+      let birthdayMessage = "";
+      let townMessage = "";
+      let sportMessage = "";
+
       if (!birthday || isNaN(birthday) || birthday > currentYear) {
-        alert(
+        birthdayMessage(
           "Введено некоректний рік народження. Будь ласка, введіть правильний рік."
         );
       } else {
-        alert(`Дякую! Ваш рік народження: ${birthday}`);
+        birthdayMessage(`Дякую! Ваш рік народження: ${birthday}`);
       }
 
       if (!town) {
-        alert(nitTown);
+        townMessage = nitTown;
       } else {
         switch (town.toLowerCase()) {
           case "київ":
-            alert("Ти живеш у столиці України.");
+            townMessage("Ти живеш у столиці України.");
             break;
           case "вашингтон":
-            alert("Ти живеш у столиці Сполучених Штатів Америки.");
+            townMessage("Ти живеш у столиці Сполучених Штатів Америки.");
             break;
           case "лондон":
-            alert("Ти живеш у столиці Англії.");
+            townMessage("Ти живеш у столиці Англії.");
             break;
           default:
-            alert(`Ти живеш у місті ${town}.`);
+            townMessage(`Ти живеш у місті ${town}.`);
             break;
         }
       }
 
       if (!sport) {
-        alert(nitSport);
+        sportMessage = nitSport;
       } else {
         switch (sport.toLowerCase()) {
           case "легка атлетика":
-            alert("Круто! Хочеш стати Олександрою Магучіх?");
+            sportMessage("Круто! Хочеш стати Олександрою Магучіх?");
             break;
           case "боротьба":
-            alert("Круто! Хочеш стати Жаном Беленюком?");
+            sportMessage("Круто! Хочеш стати Жаном Беленюком?");
             break;
           case "бокс":
-            alert("Круто! Хочеш стати Олександром Усиком?");
+            sportMessage("Круто! Хочеш стати Олександром Усиком?");
             break;
           default:
-            alert(`Цікавий вибір: ${sport}.`);
+            sportMessage(`Цікавий вибір: ${sport}.`);
             break;
         }
       }
+
+      let finalMessage =
+        `${birthdayMessage}\n${townMessage}\n${sportMessage}`.trim();
+      alert(finalMessage);
     </script>
   </body>
 </html>
