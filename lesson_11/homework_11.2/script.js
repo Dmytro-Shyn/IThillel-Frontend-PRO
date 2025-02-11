@@ -1,5 +1,12 @@
-let someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+const button = document.getElementsByTagName('button')[0];
+const h1 = document.getElementsByTagName('h1')[0];
 
+button.addEventListener('click', () => {
+  if (h1.style.color == 'red') {
+    h1.style.color = 'black';
+  }
+  else {
+    h1.style.color = 'red';
+  }
 
-let squared = someNumbers.filter(num => num = num % 2 === 0);
-console.log(squared); 
+});
