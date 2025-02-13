@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 12.3</title>
+    <script src="./script.js" defer></script>
+    <style>
+      body {
+        margin: 20px;
+      }
+      div {
+        border: 2px solid brown;
+        padding: 10px;
+        width: 500px;
+        margin-bottom: 20px;
+      }
+      .notes {
+        border: 1px solid black;
+        padding: 10px;
+        width: 350px;
+        margin-bottom: 20px;
+      }
+      input {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>
+        Додати нотатку
+      </h1>
+      <input type="text" placeholder="Заголовок нотатки" name="titleNote" id="titleNote">
+      <br>
+      <input type="text" placeholder="Текст нотатаки" name="textNote" id="textNote" >
+      <br>
+      <button id="addNote">додати нотатку</button>
+    </div>
+  </body>
+</html>
