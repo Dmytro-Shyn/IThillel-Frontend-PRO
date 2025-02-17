@@ -33,4 +33,3 @@ function addNewNote() {
   document.getElementById("textNote").value = "";
 }
 
-g

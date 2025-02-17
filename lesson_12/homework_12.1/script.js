@@ -5,11 +5,11 @@ let callInput = () => {
   return prompt()
 }
 
-button1.addEventListener('click', () => {
-  location.href = "https://www.google.com"
-});
+let userInput
+
 button2.addEventListener('click', () => {
-  let userInput = callInput();
   location.href = `${userInput}`
 });
-
+button1.addEventListener('click', () => {
+  userInput = callInput();
+});
