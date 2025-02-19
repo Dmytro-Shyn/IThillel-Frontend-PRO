@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Homework 13.1</title>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form">
+        <h1 class="mb-30">We would like to help you</h1>
+        <form action="" id="userForm" style="position: relative">
+          <input
+            class="form-input mb-15"
+            type="text"
+            name="user-name"
+            placeholder="Username"
+            id="userName"
+            required
+          />
+          <textarea
+            class="form-input mb-30 h-100"
+            name="text-message"
+            id="textarea"
+            placeholder="Massage"
+            wrap="soft"
+            required
+          ></textarea>
+          <p style="position: absolute; bottom: 50px">test</p>
+          <h3 class="mb-15">How to answer you?</h3>
+          <input
+            class="form-input mb-15"
+            type="tel"
+            name="tel"
+            placeholder="Phone number"
+            id="phone"
+          />
+          <input
+            class="form-input mb-30"
+            type="email"
+            name="email"
+            placeholder="email@gmail.com"
+          />
+          <button id="btn1" type="submit">Send massage</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
