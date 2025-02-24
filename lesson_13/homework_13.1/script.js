@@ -3,16 +3,20 @@ const form = document.getElementById("userForm");
 const inputUserName = document.getElementById("userName");
 const inputTextArea = document.getElementById("textArea");
 const inputTel = document.getElementById("phone");
+const inputEmail = document.getElementById("email");
 
 // REDEX
 const nameRegex = /^[a-zA-Zа-яА-ЯіІїЇєЄ]{5,20}$/;
 const massageRegex = /^.{5,}$/;
 const phoneRegex = /^\+380\d{9}$/;
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 // Error Massage
 const formErrorUserName = "Ім'я повинно містити тільки літери (5-20 символів)";
 const formErrorMassage = "Повідомлення повинно містити мінімум (5 символів)";
 const formErrorTel = "Невірний формат номера. Введіть у форматі +380XXXXXXXXX";
+const formErrorEmail =
+  "Невірний формат email. Перевірте правильність введення.";
 
 //userName
 inputUserName.addEventListener("change", () => {
@@ -44,10 +48,8 @@ inputTextArea.addEventListener("change", () => {
     inputTextArea.oninvalid;
   }
 });
+
 // tell
-inputTel.addEventListener("input", function () {
-  this.value = this.value.replace(/\D/g, "");
-});
 inputTel.addEventListener("click", function () {
   if (this.value === "") {
     // Якщо поле порожнє
@@ -59,7 +61,7 @@ inputTel.addEventListener("change", () => {
   console.log(inputTel.value.length);
 
   if (!phoneRegex.test(inputTel.value.trim())) {
-    inputTel.classList.add("form-input-invalid");
+    inputTel.classList.add("form-input-valid");
     form.children[3].querySelector("div").style.display = "inline-block";
     form.children[3].querySelector("div").children[0].textContent =
       formErrorTel;
@@ -69,25 +71,29 @@ inputTel.addEventListener("change", () => {
     inputTel.oninvalid;
   }
 });
-console.log(form.children[3]);
-console.log(form.children);
-// messageInput.addEventListener("input", () => {
-//   const messageValue = messageInput.value;
 
-//   if (!/^.{5,}$/.test(messageValue)) {
-//     errorMessage.textContent = "Message must be at least 5 characters long.";
-//     errorMessage.style.display = "block";
-//   } else {
-//     errorMessage.style.display = "none";
-//   }
-// });
+// email
+inputEmail.addEventListener("change", () => {
+  console.log(inputEmail.value.length);
 
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
+  if (!emailRegex.test(inputEmail.value.trim())) {
+    inputEmail.classList.add("form-input-valid");
+    form.children[4].querySelector("div").style.display = "inline-block";
+    form.children[4].querySelector("div").children[0].textContent =
+      formErrorTel;
+  } else {
+    inputEmail.classList.remove("form-input-invalid");
+    form.children[4].querySelector("div").style.display = "none";
+    inputEmail.oninvalid;
+  }
+});
 
-//   const formData = new FormData(form);
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-//   for (const [name, value] of formData.entries()) {
-//     console.log(`${name}: ${value}`);
-//   }
-// });
+  const formData = new FormData(form);
+
+  for (const [name, value] of formData.entries()) {
+    console.log(`${name}: ${value}`);
+  }
+});
