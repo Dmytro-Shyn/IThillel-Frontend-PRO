@@ -12,13 +12,44 @@
         height: 600px;
         gap: 50px;
       }
+      img {
+        height: 500px;
+      }
+      .wrapper-img {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+      }
+      .wrapper-dots {
+        display: flex;
+        gap: 20px;
+      }
+      .dots {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: #24a3ff;
+        opacity: 20%;
+        border: none;
+      }
+      .dots-active {
+        opacity: 100%;
+      }
     </style>
     <script src="./script.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
       <button id="btn-2">Prev</button>
-      <img id="foto" src="./foto/1.jpg" alt="foto" />
+      <div class="wrapper-img">
+        <img id="foto" src="./foto/1.jpg" alt="foto" />
+        <div id="wr-dots" class="wrapper-dots">
+          <button class="dots"></button>
+          <button class="dots"></button>
+          <button class="dots"></button>
+        </div>
+      </div>
       <button id="btn-1">Next</button>
     </div>
   </body>

@@ -22,7 +22,7 @@ body {
   justify-content: center;
 }
 
-.form {
+.wrapper-form {
   display: flex;
   flex-direction: column;
   width: 590px;
@@ -46,10 +46,8 @@ h1 {
   font-weight: 700;
   line-height: normal;
   margin: 0;
-  background: var(
-    --Gradient-Red-Text,
-    linear-gradient(90deg, #f0145a 0.84%, #ef8080 99.96%)
-  );
+  background: linear-gradient(90deg, #f0145a 0.84%, #ef8080 99.96%);
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -93,6 +91,23 @@ button {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+.form-content-user {
+  display: flex;
+  flex-direction: column;
+}
+
+/* pop-app-massage */
+.form-popup-massage-error {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0;
+  color: red;
+}
+
+.form-input-invalid {
+  outline: 1px solid red;
 }
 
 .mb-15 {
