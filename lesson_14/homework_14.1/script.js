@@ -9,26 +9,21 @@ const buttonPrev = document.getElementById("btn-2");
 const foto = document.getElementById("foto");
 const dots = document.getElementById("wr-dots");
 
+images.forEach(() => {
+  const button = document.createElement("button");
+  button.classList.add("dots");
+  dots.appendChild(button);
+});
+
 let imgIdx = 0;
+const dotsArray = Array.from(dots.children);
 
 const updateSlider = () => {
-  dots.children[0].classList.remove("dots-active");
-  dots.children[1].classList.remove("dots-active");
-  dots.children[2].classList.remove("dots-active");
+  dotsArray.forEach((dot) => dot.classList.remove("dots-active"));
   foto.src = images[imgIdx];
   buttonPrev.disabled = imgIdx === 0;
   buttonNext.disabled = imgIdx === images.length - 1;
-
-  if (foto.attributes[1].textContent == images[0]) {
-    dots.children[0].classList.add("dots-active");
-  } else if (foto.attributes[1].textContent == images[1]) {
-    dots.children[1].classList.add("dots-active");
-  } else if (foto.attributes[1].textContent == images[2]) {
-    dots.children[2].classList.add("dots-active");
-  }
-
-  console.log(foto.attributes[1].textContent);
-  console.log(images[0]);
+  dotsArray[imgIdx].classList.add("dots-active");
 };
 
 const slider = () => {
