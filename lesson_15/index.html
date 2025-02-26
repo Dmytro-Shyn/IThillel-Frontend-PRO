@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <h1>ToDoList</h1>
-      <form class="form js--form">
+      <form id="toDoForm" class="form js--form">
         <input
           type="text"
           name="value"
@@ -19,15 +19,15 @@
         />
         <button class="form__btn">Додати</button>
       </form>
-      <ul class="js--todos-wrapper">
+      <ul id="toDoWrapper" class="js--todos-wrapper">
         <li class="todo-item">
           <input type="checkbox" />
-          <span class="todo-item__description">Text</span>
+          <span class="todo-item__description">Text1</span>
           <button class="todo-item__delete">Видалити</button>
         </li>
-        <li class="todo-item todo-item--checked">
+        <li class="todo-item">
           <input type="checkbox" />
-          <span class="todo-item__description">Text</span>
+          <span class="todo-item__description">Text2</span>
           <button class="todo-item__delete">Видалити</button>
         </li>
       </ul>
