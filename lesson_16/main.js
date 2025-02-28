@@ -1,5 +1,5 @@
 class Student {
-  constructor(firstName, secondName, birthday, grades) {
+  constructor(firstName, secondName, birthday, grades = []) {
     this.firstName = firstName;
     this.secondName = secondName;
     this.birthday = birthday;
@@ -32,6 +32,9 @@ class Student {
   }
 
   getAverageGrade() {
+    if (this.grades.length === 0) {
+      return 0;
+    }
     return (
       this.grades.reduce((sum, grade) => sum + grade, 0) / this.grades.length
     );
