@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+  </head>
+  <body>
+    <div>
+      <h1>Таймер відліку</h1>
+      <div><span id="timer">01:30</span></div>
+    </div>
+    <script>
+      function startCountdownTimer() {
+        let totalSeconds = 90;
+
+        const timerElement = document.getElementById("timer");
+
+        function formatTime(seconds) {
+          const minutes = Math.floor(seconds / 60);
+          const remainingSeconds = seconds % 60;
+
+          const displayMinutes = minutes < 10 ? "0" + minutes : minutes;
+          const displaySeconds =
+            remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
+
+          return displayMinutes + ":" + displaySeconds;
+        }
+
+        timerElement.textContent = formatTime(totalSeconds);
+
+        let timerInterval;
+
+        function updateTimer() {
+          totalSeconds--;
+
+          timerElement.textContent = formatTime(totalSeconds);
+
+          if (totalSeconds <= 0) {
+            clearInterval(timerInterval);
+            console.log("Таймер закінчився!");
+          }
+        }
+
+        timerInterval = setInterval(updateTimer, 1000);
+      }
+
+      window.onload = startCountdownTimer;
+    </script>
+  </body>
+</html>
