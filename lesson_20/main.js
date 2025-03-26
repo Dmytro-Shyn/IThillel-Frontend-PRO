@@ -41,6 +41,9 @@ const ShowTodos = () => {
   const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
 
   todosWrapper.addEventListener("click", (event) => {
+    if (event.target.closest("button.todo-item__delete")) {
+      return;
+    }
     let btnDel = event.target.closest(".todo-item");
 
     if (btnDel) {
@@ -104,6 +107,7 @@ const removeToDoItem = () => {
     let btnDel = event.target.closest("button.todo-item__delete");
 
     if (btnDel) {
+      event.stopPropagation();
       let todoItem = btnDel.closest("li");
       if (todoItem) {
         let index = parseInt(todoItem.dataset.id);
