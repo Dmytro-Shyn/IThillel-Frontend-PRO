@@ -41,7 +41,10 @@ const ShowTodos = () => {
   const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
 
   todosWrapper.addEventListener("click", (event) => {
-    if (event.target.closest("button.todo-item__delete")) {
+    if (
+      event.target.closest("button.todo-item__delete") ||
+      event.target.closest("input")
+    ) {
       return;
     }
     let btnDel = event.target.closest(".todo-item");
